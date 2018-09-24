@@ -6,12 +6,7 @@ import time
 import os
 from os.path import join as pjoin
 
-def main():
-    print("1.12 Basic Model/Blockstate Generator\nby enwash\n")
-
-    blockName = input("Block name: (i.e. minecraft:dirt)\n")
-    textureName = input("Texture filename: (i.e. diamond_block)\n").split(".png")[0]
-    
+def main(blockName, textureName, ):    
     #-Model Write-#
     fDir = pjoin(os.getcwd(), "__OUTPUT__",  "blocks", "models")
     if (not os.path.exists(fDir)):
@@ -30,3 +25,4 @@ def main():
     blockstate.close()
     print("Blockstate created at " + pjoin(fDir, blockName.split(":")[1]) + ".json")
     time.sleep(1)
+# main(input("Block name: (i.e. minecraft:dirt)\n"), input("Texture filename: (i.e. diamond_block)\n").split(".png")[0])

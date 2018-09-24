@@ -38,7 +38,10 @@ def main():
     pattern = ""
     for i in range (3):
         if (rowsEnabled[i]):
-            rowList[i] = '\t\t"' + rowList[i] + '"\n'
+            rowList[i] = '\t\t"' + rowList[i] + '"'
+            if i < len(rowList) - 1:
+                rowList[i] += ","
+            rowList[i] += '\n'
             pattern += rowList[i]
     key = ""
     for i in range(numItems):
